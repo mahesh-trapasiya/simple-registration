@@ -1,0 +1,35 @@
+.profile_wrapper {
+    background-color: #000000;
+    min-height      : 100vh;
+    height          : 100%;
+    padding-top     : 50px;
+}
+
+.profile_wrapper>.container {
+    padding: 0 113px;
+}
+
+h2 {
+    color  : #ef4f9f;
+    padding: 10px 0;
+
+}
+
+.update_profile_button,
+.update_profile_button:hover,
+.update_profile_button:active {
+    background-color: #ef4f9f !important;
+    border          : #ef4f9f !important;
+
+
+}
+
+.update_profile_button:focus {
+    background-color: #ef4f9f !important;
+    border          : #ef4f9f !important;
+    box-shadow      : 0 0 0 0.25rem rgb(239 79 159 / 50%) !important
+}
+
+.profile_image {
+    max-width: 300px;
+}
