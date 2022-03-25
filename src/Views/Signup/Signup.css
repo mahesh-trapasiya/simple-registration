@@ -4,12 +4,12 @@
 }
 
 .signup_wrapper>.container {
-    padding: 0 113px;
+    width: 60%;
 }
 
 @media only screen and (max-width: 600px) {
     .signup_wrapper>.container {
-        padding: 0 40px;
+        width: 80%;
     }
 }
 

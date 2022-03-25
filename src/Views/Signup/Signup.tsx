@@ -204,17 +204,15 @@ export default function Signup(): JSX.Element {
                 Due to recent fake profiles, SessionGirls is requiring a
                 verification photo that is displyed underneat your profile
                 picture. this photo will be made public. please take a photo of
-                yourself <a href="#">holding a handwritten sign</a> that says
+                yourself <a href="/">holding a handwritten sign</a> that says
                 "SessionGirls" on it. your profile will not be approved without
-                it. if you don't want your face shown for privacy reasons,
-                email.
+                it. if you don't want your face shown for privacy reasons, email
                 <a href="mailto:admin@sessiongirls.com">
                   admin@sessiongirls.com
-                </a>{" "}
-                Thank you.
+                </a>
+                . Thank you.
               </p>
             </Col>
-
             <Col md={6}>
               <SelectBox
                 label="Height"

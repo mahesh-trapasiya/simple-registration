@@ -21,6 +21,7 @@ export default function Profile() {
     formState: { errors },
     setValue,
   } = useForm();
+  
   const fileRef: any = useRef();
   const navigate = useNavigate();
   const [physique] = useState([
