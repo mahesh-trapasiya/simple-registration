@@ -1,8 +1,9 @@
 import React, { createRef, useEffect, useMemo, useRef, useState } from "react";
-import { Button, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import ReactQuill from "react-quill";
 import { useNavigate } from "react-router-dom";
+import Button from "../../Components/Button/Button";
 import SelectBox from "../../Components/SelectBox/SelectBox";
 import TextBox from "../../Components/TextBox/TextBox";
 import states from "../../states.json";
@@ -18,7 +19,6 @@ export default function Profile() {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
     setValue,
   } = useForm();
   const fileRef: any = useRef();
@@ -100,11 +100,11 @@ export default function Profile() {
   }, []);
 
   const handleProfileEdit = (data: any) => {
-    console.log(data);
     const formdata = { ...userData, ...data };
 
     localStorage.setItem("userData", JSON.stringify(formdata));
     setUserData(formdata);
+    alert("Profile Updated Successfully");
   };
 
   const updateImage = async () => {
@@ -138,12 +138,16 @@ export default function Profile() {
           <Col md={4} className="ml-4">
             <Button
               className="update_profile_button"
+              label="Update photo gallery"
               type="button"
               onClick={fileSelectHandler}
-            >
-              Update photo gallery
-            </Button>
+            />
             <h2>Show Profile</h2>
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label=""
+            />
           </Col>
         </Row>
         <h2 className="mt-3">Stats</h2>
@@ -532,9 +536,11 @@ export default function Profile() {
           </Row>
           <Row className="mt-5">
             <Col md={12}>
-              <Button className="register_button" type="submit">
-                Update Profile
-              </Button>
+              <Button
+                className="register_button"
+                type="submit"
+                label="Update Profile"
+              />
             </Col>
           </Row>
         </Form>

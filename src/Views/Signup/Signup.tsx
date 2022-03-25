@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import SelectBox from "../../Components/SelectBox/SelectBox";
 import TextBox from "../../Components/TextBox/TextBox";
@@ -7,6 +7,7 @@ import states from "../../states.json";
 import ReactQuill from "react-quill";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
+import Button from "../../Components/Button/Button";
 
 interface weightsArray {
   id: string | number;
@@ -52,8 +53,10 @@ export default function Signup(): JSX.Element {
       value: "2 on 1 Wrestling",
     },
   ]);
+
   const regex: any =
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{9,}$/;
+
   useEffect(() => {
     const numbers = Array.from(Array(100).keys()).map((i) => ({
       id: i + 1 + "kg",
@@ -94,7 +97,20 @@ export default function Signup(): JSX.Element {
       <Container>
         <h2 className="signup_heading">Girls Registration</h2>
         <Form noValidate onSubmit={handleSubmit(handleSignup)}>
-          <Row md={12}>
+          <Row>
+            <Col md={12}>
+              <TextBox
+                label="Name"
+                placeholder="Enter name"
+                type="text"
+                register={register("name", {
+                  required: "Name is required",
+                })}
+                hasError={errors.name}
+                error={errors.name && errors.name.message}
+                isRequired={true}
+              />
+            </Col>
             <Col md={6}>
               <TextBox
                 label="Username"
@@ -106,19 +122,6 @@ export default function Signup(): JSX.Element {
                 register={register("username", {
                   required: "Username is required",
                 })}
-              />
-            </Col>
-            <Col md={6}>
-              <TextBox
-                label="Name"
-                placeholder="Enter name"
-                type="text"
-                register={register("name", {
-                  required: "Name is required",
-                })}
-                hasError={errors.name}
-                error={errors.name && errors.name.message}
-                isRequired={true}
               />
             </Col>
             <Col md={6}>
@@ -192,22 +195,30 @@ export default function Signup(): JSX.Element {
                 register={register("verification", {
                   required: "Verification pic is required",
                 })}
-                hasError={errors.profile}
-                error={errors.profile && errors.profile.message}
+                hasError={errors.verification}
+                error={errors.verification && errors.verification.message}
               />
             </Col>
-            <Col md={6}>
+            <Col md={12}>
               <p className="verification_notice">
                 Due to recent fake profiles, SessionGirls is requiring a
                 verification photo that is displyed underneat your profile
-                picture.
+                picture. this photo will be made public. please take a photo of
+                yourself <a href="#">holding a handwritten sign</a> that says
+                "SessionGirls" on it. your profile will not be approved without
+                it. if you don't want your face shown for privacy reasons,
+                email.
+                <a href="mailto:admin@sessiongirls.com">
+                  admin@sessiongirls.com
+                </a>{" "}
+                Thank you.
               </p>
             </Col>
 
             <Col md={6}>
               <SelectBox
                 label="Height"
-                options={[]}
+                options={weights}
                 register={register("height", {
                   required: false,
                 })}
@@ -227,6 +238,15 @@ export default function Signup(): JSX.Element {
                 label="Physique"
                 options={physique}
                 register={register("physique", {
+                  required: false,
+                })}
+              />
+            </Col>
+            <Col md={6}>
+              <TextBox
+                label="Birth date (optional)"
+                type="date"
+                register={register("dob", {
                   required: false,
                 })}
               />
@@ -266,16 +286,8 @@ export default function Signup(): JSX.Element {
                 })}
               />
             </Col>
-            <Col md={6}>
-              <TextBox
-                label="Birth date:(optional)"
-                type="date"
-                register={register("dob", {
-                  required: false,
-                })}
-              />
-            </Col>
-            <Col md={6}>
+
+            <Col md={12}>
               <Form.Label style={{ textAlign: "left", width: "100%" }}>
                 About me
               </Form.Label>
@@ -300,9 +312,11 @@ export default function Signup(): JSX.Element {
           </Row>
           <Row className="mt-5">
             <Col md={12}>
-              <Button className="register_button" type="submit">
-                Register
-              </Button>
+              <Button
+                className="register_button"
+                type="submit"
+                label="Register"
+              />
             </Col>
           </Row>
         </Form>

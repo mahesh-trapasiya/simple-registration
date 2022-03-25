@@ -9,6 +9,12 @@
     padding: 0 113px;
 }
 
+@media only screen and (max-width: 600px) {
+    .profile_wrapper>.container {
+        padding: 0 40px;
+    }
+}
+
 h2 {
     color  : #ef4f9f;
     padding: 10px 0;
