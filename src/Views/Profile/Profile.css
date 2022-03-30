@@ -37,5 +37,92 @@ h2 {
 }
 
 .profile_image {
-    max-width: 300px;
+    width        : 100%;
+    height       : 100%;
+    object-fit   : cover;
+    border-radius: 50%;
+    overflow     : hidden;
+    text-align   : center;
+    margin       : 0 auto;
+}
+
+label {
+    color: #ffffff;
+}
+
+.editor {
+    background-color: #2e3344;
+}
+
+.ql-editor {
+    color: rgb(255 255 255 / 75%) !important
+}
+
+.ql-formats span,
+.ql-formats button {
+    color: rgb(255 255 255 / 75%) !important;
+}
+
+.register_button,
+.register_button:hover,
+.register_button:active {
+    background-color: #ef4f9f !important;
+    border          : #ef4f9f !important;
+
+
+}
+
+.register_button:focus {
+    background-color: #ef4f9f !important;
+    border          : #ef4f9f !important;
+    box-shadow      : 0 0 0 0.25rem rgb(239 79 159 / 50%) !important
+}
+
+.form-control,
+.form-select {
+    color           : rgb(255 255 255 / 75%) !important;
+    background-color: #2e3344 !important;
+    background-clip : padding-box !important;
+    border          : 1px solid #222633 !important;
+}
+
+.form-label {
+    font-size: 13px !important;
+}
+
+.form-check-input {
+    background-color: #2e3344 !important;
+}
+
+.profile-update {
+    width   : 130px;
+    height  : 130px;
+    position: relative;
+    margin  : 0 auto;
+
+}
+
+.profile-update img {
+    width        : 100%;
+    height       : 100%;
+    object-fit   : cover;
+    border-radius: 50%;
+    overflow     : hidden;
+    text-align   : center;
+    margin       : 0 auto;
+    box-shadow   : 0px 5px 10px rgb(255 255 255 / 30%);
+    border       : 4px solid #fff;
+}
+
+.profile-update .profile-updat-btn {
+    position        : absolute;
+    padding         : 6px 12px;
+    bottom          : -8px;
+    right           : 10px;
+    background-color: #fff;
+    color           : #2e3344;
+    line-height     : 1;
+    border-color    : #fff;
+    border-radius   : 8px;
+    font-size       : 14px;
 }

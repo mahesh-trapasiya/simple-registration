@@ -11,6 +11,7 @@ interface TextBoxProps {
   isRequired?: boolean;
   register?: any;
   size?: "sm" | "md" | "lg";
+  className?: string;
 }
 export default function TextBox({
   type,
@@ -21,6 +22,7 @@ export default function TextBox({
   isRequired = false,
   register,
   size = "md",
+  className = "",
   ...props
 }: TextBoxProps) {
   return (
@@ -32,6 +34,7 @@ export default function TextBox({
         isInvalid={hasError}
         required={isRequired}
         size={size}
+        className={className}
         {...register}
         {...props}
       />
