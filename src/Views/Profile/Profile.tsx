@@ -54,6 +54,34 @@ export default function Profile() {
       id: "2 on 1 Wrestling",
       value: "2 on 1 Wrestling",
     },
+    {
+      id: "Judo",
+      value: "Judo",
+    },
+    {
+      id: "Karate",
+      value: "Karate",
+    },
+    {
+      id: "Grapping",
+      value: "Grapping",
+    },
+    {
+      id: "Fantasy Boxing",
+      value: "Fantasy Boxing",
+    },
+    {
+      id: "Fantasy Kickboxing ",
+      value: "Fantasy Kickboxing ",
+    },
+    {
+      id: "Tag Team Mathces",
+      value: "Tag Team Mathces",
+    },
+    {
+      id: "Female Vs Female",
+      value: "Female Vs Female",
+    },
   ]);
 
   useEffect(() => {
@@ -90,7 +118,6 @@ export default function Profile() {
       if (user.username) {
         setUserData(user);
         Object.keys(user).forEach((key) => {
-          console.log(" =>", key, user[key]);
           setValue(key, user[key]);
         });
       } else {
